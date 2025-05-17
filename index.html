@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Board - Bayerwald Hackathon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SkillConnect Community Board</h1>
+
+    <div id="authSection">
+      <input type="email" id="emailInput" placeholder="Enter your email" />
+      <button id="sendLinkBtn">Send Login Link</button>
+    </div>
+
+    <div id="profileSection" class="hidden">
+      <h2>Welcome, <span id="userEmail"></span></h2>
+      <label>Tags (comma-separated):</label>
+      <input type="text" id="tagsInput" />
+      <label>Links (comma-separated):</label>
+      <input type="text" id="linksInput" />
+      <label>
+        <input type="checkbox" id="activeCheckbox" checked />
+        Active
+      </label>
+      <button id="saveBtn">Save Profile</button>
+    </div>
+
+    <div id="filterSection">
+      <h3>Filter by Tag</h3>
+      <input type="text" id="filterInput" placeholder="Search tags..." />
+    </div>
+
+    <div id="usersList"></div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

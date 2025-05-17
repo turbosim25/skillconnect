@@ -1,0 +1,4 @@
+email,name,tags
+alice@example.com,Alice Example,JavaScript;UI/UX
+bob@example.com,Bob Dev,Python;DevOps
+charlie@example.com,Charlie Quantum,Quantum Computing;C++
