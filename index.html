@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Community Board - Bayerwald Hackathon</title>
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init(""); // Replace with your EmailJS user ID
+    })();
+  </script>
 </head>
 <body>
   <div class="container">
@@ -26,6 +32,7 @@
         Active
       </label>
       <button id="saveBtn">Save Profile</button>
+      <button id="sendDashboardLinkBtn">Send Dashboard Link</button>
     </div>
 
     <div id="filterSection">

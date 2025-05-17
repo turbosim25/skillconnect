@@ -198,5 +198,35 @@ function renderUsers() {
     });
 }
 
+const sendDashboardLinkBtn = document.getElementById('sendDashboardLinkBtn');
+
+sendDashboardLinkBtn.addEventListener('click', () => {
+  const email = userEmail.textContent;
+  if (!email) {
+    alert("User email not found. Please log in.");
+    return;
+  }
+  const links = linksInput.value.split(',').map(link => link.trim()).filter(link => link);
+  if (links.length === 0) {
+    alert("Please add at least one dashboard link in the Links field.");
+    return;
+  }
+  const dashboardLink = links[0]; // Use the first link as dashboard link
+
+  const serviceID = 'service_ta151gh'; // Replace with your EmailJS service ID
+  const templateID = 'template_twslqio'; // Replace with your EmailJS template ID
+  const templateParams = {
+    user_email: email,
+    dashboard_link: dashboardLink
+  };
+
+  emailjs.send(serviceID, templateID, templateParams)
+    .then(() => {
+      alert("Dashboard link email sent successfully!");
+    }, (error) => {
+      alert("Failed to send dashboard link email: " + error.text);
+    });
+});
+
 filterInput.addEventListener('input', renderUsers);
 renderUsers();
